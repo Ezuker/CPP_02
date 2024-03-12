@@ -14,7 +14,7 @@
 # define FIXED_H
 
 # include <iostream>
-
+# include <cmath>
 class Fixed
 {
 	public:
@@ -25,7 +25,6 @@ class Fixed
 		~Fixed();
 
 		Fixed	&operator=(Fixed const &rhs);
-		Fixed	&operator<<(std::ostream &o, Fixed const &rhs);
 
 		int		getRawBits() const;
 		void	setRawBits(int const raw);
@@ -37,4 +36,5 @@ class Fixed
 		static int	_nbBits;
 };
 
+std::ostream	&operator<<(std::ostream &o, Fixed const &rhs);
 #endif
