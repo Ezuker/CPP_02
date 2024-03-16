@@ -6,7 +6,7 @@
 /*   By: bcarolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:52:38 by bcarolle          #+#    #+#             */
-/*   Updated: 2024/03/10 16:30:52 by bcarolle         ###   ########.fr       */
+/*   Updated: 2024/03/16 15:24:32 by bcarolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ Fixed::Fixed(float const floating_point)
 Fixed::Fixed(Fixed const &copy)
 {
 	this->_integer = copy._integer;
-	setRawBits(copy.getRawBits());
 }
 
 Fixed::~Fixed()
@@ -39,32 +38,31 @@ Fixed::~Fixed()
 Fixed	&Fixed::operator=(Fixed const &rhs)
 {
 	this->_integer = rhs._integer;
-	this->setRawBits(rhs.getRawBits());
 	return (*this);
 }
 
-Fixed	&Fixed::operator+(Fixed const &rhs)
+float	Fixed::operator+(Fixed const &rhs)
 {
-	*this = this->toFloat() + rhs.toFloat();
-	return (*this);
+	float result = this->toFloat() + rhs.toFloat();
+	return (result);
 }
 
-Fixed	&Fixed::operator-(Fixed const &rhs)
+float	Fixed::operator-(Fixed const &rhs)
 {
-	*this = this->toFloat() - rhs.toFloat();
-	return (*this);
+	float result = this->toFloat() - rhs.toFloat();
+	return (result);
 }
 
-Fixed	&Fixed::operator*(Fixed const &rhs)
+float	Fixed::operator*(Fixed const &rhs)
 {
-	*this = this->toFloat() * rhs.toFloat();
-	return (*this);
+	float result = this->toFloat() * rhs.toFloat();
+	return (result);
 }
 
-Fixed	&Fixed::operator/(Fixed const &rhs)
+float	Fixed::operator/(Fixed const &rhs)
 {
-	*this = this->toFloat() / rhs.toFloat();
-	return (*this);
+	float result = this->toFloat() / rhs.toFloat();
+	return (result);
 }
 
 int	Fixed::operator>(Fixed &rhs)
@@ -149,12 +147,12 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	return ((float)(this->getRawBits()) / (float)(1 << Fixed::_nbBits));
+	return ((float)(this->_integer) / (float)(1 << Fixed::_nbBits));
 }
 
 int	Fixed::toInt(void) const
 {
-	return (this->getRawBits() >> Fixed::_nbBits);
+	return (this->_integer >> Fixed::_nbBits);
 }
 
 std::ostream	&operator<<(std::ostream &o, Fixed const &rhs)

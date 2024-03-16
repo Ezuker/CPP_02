@@ -6,16 +6,15 @@
 /*   By: bcarolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:52:40 by bcarolle          #+#    #+#             */
-/*   Updated: 2024/03/13 13:37:58 by bcarolle         ###   ########.fr       */
+/*   Updated: 2024/03/16 15:26:55 by bcarolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef FIXED_H
+# define FIXED_H
 
 # include <iostream>
 # include <cmath>
-
 class Fixed
 {
 	public:
@@ -26,10 +25,10 @@ class Fixed
 		~Fixed();
 
 		Fixed	&operator=(Fixed const &rhs);
-		Fixed	&operator+(Fixed const &rhs);
-		Fixed	&operator-(Fixed const &rhs);
-		Fixed	&operator*(Fixed const &rhs);
-		Fixed	&operator/(Fixed const &rhs);
+		float	operator+(Fixed const &rhs);
+		float	operator-(Fixed const &rhs);
+		float	operator*(Fixed const &rhs);
+		float	operator/(Fixed const &rhs);
 		int		operator>(Fixed &rhs);
 		int		operator<(Fixed &rhs);
 		int		operator>=(Fixed &rhs);

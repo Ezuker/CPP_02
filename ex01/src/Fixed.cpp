@@ -6,7 +6,7 @@
 /*   By: bcarolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:52:38 by bcarolle          #+#    #+#             */
-/*   Updated: 2024/03/10 16:30:52 by bcarolle         ###   ########.fr       */
+/*   Updated: 2024/03/16 14:48:00 by bcarolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ Fixed::Fixed(Fixed const &copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	this->_integer = copy._integer;
-	setRawBits(copy.getRawBits());
 }
 
 Fixed::~Fixed()
@@ -45,7 +44,6 @@ Fixed	&Fixed::operator=(Fixed const &rhs)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	this->_integer = rhs._integer;
-	this->setRawBits(rhs.getRawBits());
 	return (*this);
 }
 
@@ -61,12 +59,12 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	return ((float)(this->getRawBits()) / (float)(1 << Fixed::_nbBits));
+	return ((float)(this->_integer) / (float)(1 << Fixed::_nbBits));
 }
 
 int	Fixed::toInt(void) const
 {
-	return (this->getRawBits() >> Fixed::_nbBits);
+	return (this->_integer >> Fixed::_nbBits);
 }
 
 std::ostream	&operator<<(std::ostream &o, Fixed const &rhs)

@@ -6,7 +6,7 @@
 /*   By: bcarolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:52:38 by bcarolle          #+#    #+#             */
-/*   Updated: 2024/03/10 16:31:32 by bcarolle         ###   ########.fr       */
+/*   Updated: 2024/03/16 14:44:22 by bcarolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Fixed::Fixed(Fixed const &copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	this->_integer = copy._integer;
-	setRawBits(copy.getRawBits());
 }
 
 Fixed::~Fixed()
@@ -33,7 +32,6 @@ Fixed	&Fixed::operator=(Fixed const &rhs)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	this->_integer = rhs._integer;
-	setRawBits(rhs.getRawBits());
 	return (*this);
 }
 

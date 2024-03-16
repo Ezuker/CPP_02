@@ -32,7 +32,7 @@ INCLUDES = \
 
 OBJ = $(SRC:%.cpp=$(BUILD_DIR)%.o)
 BUILD_DIR = ./build/
-CC = g++
+CC = c++
 CFLAGS = -Wall -Wextra -Werror -g -std=c++98
 NAME = FixedClass
 BOOL_EXEC = 0

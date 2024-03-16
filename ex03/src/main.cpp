@@ -6,7 +6,7 @@
 /*   By: bcarolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:52:35 by bcarolle          #+#    #+#             */
-/*   Updated: 2024/03/13 13:50:34 by bcarolle         ###   ########.fr       */
+/*   Updated: 2024/03/16 15:29:02 by bcarolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int main( void ) {
 	Point	point2(5.92f, 2.62f);
 
 	std::cout << a.getX() << std::endl;
+	std::cout << a.getY() << std::endl;
 	std::cout << b.getX() << std::endl;
 	std::cout << b.getY() << std::endl;
 	if (bsp(a, b, c, point1))
