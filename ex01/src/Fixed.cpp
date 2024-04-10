@@ -6,7 +6,7 @@
 /*   By: bcarolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:52:38 by bcarolle          #+#    #+#             */
-/*   Updated: 2024/03/16 14:48:00 by bcarolle         ###   ########.fr       */
+/*   Updated: 2024/04/10 17:03:53 by bcarolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Fixed::Fixed(float const floating_point)
 Fixed::Fixed(Fixed const &copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->_integer = copy._integer;
+	*this = copy;
 }
 
 Fixed::~Fixed()
