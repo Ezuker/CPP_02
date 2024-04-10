@@ -6,7 +6,7 @@
 /*   By: bcarolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:52:38 by bcarolle          #+#    #+#             */
-/*   Updated: 2024/04/10 17:03:53 by bcarolle         ###   ########.fr       */
+/*   Updated: 2024/04/10 17:05:44 by bcarolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ Fixed::~Fixed()
 Fixed	&Fixed::operator=(Fixed const &rhs)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->_integer = rhs._integer;
+	this->_integer = rhs.getRawBits();
 	return (*this);
 }
 
@@ -72,4 +72,5 @@ std::ostream	&operator<<(std::ostream &o, Fixed const &rhs)
 	o << rhs.toFloat();
 	return (o);
 }
+
 int	Fixed::_nbBits = 8;
