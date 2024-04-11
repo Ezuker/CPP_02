@@ -6,7 +6,7 @@
 /*   By: bcarolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 16:46:09 by bcarolle          #+#    #+#             */
-/*   Updated: 2024/03/12 17:00:56 by bcarolle         ###   ########.fr       */
+/*   Updated: 2024/04/11 12:11:03 by bcarolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,38 @@
 
 Point::Point()
 {
-    this->_x = Fixed();
-    this->_y = Fixed();
+	this->_x = Fixed();
+	this->_y = Fixed();
 }
 
 Point::Point(const float x, const float y)
 {
-    this->_x = Fixed(x);
-    this->_y = Fixed(y);
+	this->_x = Fixed(x);
+	this->_y = Fixed(y);
 }
 
 Point::Point(const Point &copy)
 {
-    *this = copy;
+	*this = copy;
 }
 
 Point::~Point()
 {
 }
 
-Point    &Point::operator=(const Point &rhs)
+Point	&Point::operator=(const Point &rhs)
 {
-    this->_x = rhs._x;
-    this->_y = rhs._y;
-    return (*this);
+	this->_x = rhs.getX();
+	this->_y = rhs.getY();
+	return (*this);
 }
 
-const Fixed   Point::getX()
+const Fixed	Point::getX()
 {
-    return (this->_x);
+	return (this->_x);
 }
 
-const Fixed   Point::getY()
+const Fixed	Point::getY()
 {
-    return (this->_y);
+	return (this->_y);
 }

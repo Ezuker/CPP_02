@@ -6,7 +6,7 @@
 /*   By: bcarolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:52:38 by bcarolle          #+#    #+#             */
-/*   Updated: 2024/03/16 15:27:19 by bcarolle         ###   ########.fr       */
+/*   Updated: 2024/04/11 12:05:01 by bcarolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Fixed::Fixed(float const floating_point)
 
 Fixed::Fixed(Fixed const &copy)
 {
-	this->_integer = copy._integer;
+	*this = copy;
 }
 
 Fixed::~Fixed()
@@ -37,7 +37,7 @@ Fixed::~Fixed()
 
 Fixed	&Fixed::operator=(Fixed const &rhs)
 {
-	this->_integer = rhs._integer;
+	this->_integer = rhs.getRawBits();
 	return (*this);
 }
 
@@ -67,42 +67,42 @@ float	Fixed::operator/(Fixed const &rhs)
 
 int	Fixed::operator>(Fixed &rhs)
 {
-	if (this->_integer > rhs._integer)
+	if (this->_integer > rhs.getRawBits())
 		return (1);
 	return (0);
 }
 
 int	Fixed::operator<(Fixed &rhs)
 {
-	if (this->_integer < rhs._integer)
+	if (this->_integer < rhs.getRawBits())
 		return (1);
 	return (0);
 }
 
 int	Fixed::operator>=(Fixed &rhs)
 {
-	if (this->_integer >= rhs._integer)
+	if (this->_integer >= rhs.getRawBits())
 		return (1);
 	return (0);
 }
 
 int	Fixed::operator<=(Fixed &rhs)
 {
-	if (this->_integer <= rhs._integer)
+	if (this->_integer <= rhs.getRawBits())
 		return (1);
 	return (0);
 }
 
 int	Fixed::operator==(Fixed &rhs)
 {
-	if (this->_integer == rhs._integer)
+	if (this->_integer == rhs.getRawBits())
 		return (1);
 	return (0);
 }
 
 int	Fixed::operator!=(Fixed &rhs)
 {
-	if (this->_integer != rhs._integer)
+	if (this->_integer != rhs.getRawBits())
 		return (1);
 	return (0);
 }
@@ -175,18 +175,18 @@ Fixed	&Fixed::max(Fixed &a, Fixed &b)
 	return (b);
 }
 
-Fixed	&Fixed::max(const Fixed &a, const Fixed &b)
+const Fixed	&Fixed::max(const Fixed &a, const Fixed &b)
 {
-	if (a._integer > b._integer)
-		return (const_cast<Fixed &>(a));
-	return (const_cast<Fixed &>(b));
+	if (a.getRawBits() > b.getRawBits())
+		return (a);
+	return (b);
 }
 
-Fixed	&Fixed::min(const Fixed &a, const Fixed &b)
+const Fixed	&Fixed::min(const Fixed &a, const Fixed &b)
 {
-	if (a._integer < b._integer)
-		return (const_cast<Fixed &>(a));
-	return (const_cast<Fixed &>(b));
+	if (a.getRawBits() < b.getRawBits())
+		return (a);
+	return (b);
 }
 
 int	Fixed::_nbBits = 8;

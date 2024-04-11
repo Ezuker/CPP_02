@@ -6,7 +6,7 @@
 /*   By: bcarolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:52:38 by bcarolle          #+#    #+#             */
-/*   Updated: 2024/04/10 17:38:48 by bcarolle         ###   ########.fr       */
+/*   Updated: 2024/04/11 12:03:22 by bcarolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,14 +175,14 @@ Fixed	&Fixed::max(Fixed &a, Fixed &b)
 	return (b);
 }
 
-Fixed	&Fixed::max(const Fixed &a, const Fixed &b)
+const Fixed	&Fixed::max(const Fixed &a, const Fixed &b)
 {
 	if (a.getRawBits() > b.getRawBits())
 		return (a);
 	return (b);
 }
 
-Fixed	&Fixed::min(const Fixed &a, const Fixed &b)
+const Fixed	&Fixed::min(const Fixed &a, const Fixed &b)
 {
 	if (a.getRawBits() < b.getRawBits())
 		return (a);
