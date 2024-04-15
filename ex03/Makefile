@@ -24,13 +24,14 @@ _ICYAN=$'\033[46m
 _IWHITE=$'\033[47m
 
 SRC = \
-	src/main.cpp \
-	src/Fixed.cpp \
-	src/Point.cpp \
-	src/bsp.cpp \
+	main.cpp \
+	Fixed.cpp \
+	Point.cpp \
+	bsp.cpp \
 
 INCLUDES = \
-	-I./include/ \
+	-I Point.hpp \
+	-I Fixed.hpp \
 
 OBJ = $(SRC:%.cpp=$(BUILD_DIR)%.o)
 BUILD_DIR = ./build/
@@ -69,7 +70,7 @@ $(BUILD_DIR)%.o: %.cpp
 		echo; \
 	fi
 	@$(eval IS_COMPILING = 1)
-	@echo "$(_BOLD)$(_RED) $< : $(_END) $(_GREY) $(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@ $(_END)"
+	@echo "$(_BOLD)$(_RED) $< : $(_END) $(_GREY) $(CC) $(CFLAGS) -I $(INCLUDES) -c $< -o $@ $(_END)"
 	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:

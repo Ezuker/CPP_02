@@ -6,7 +6,7 @@
 /*   By: bcarolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:52:38 by bcarolle          #+#    #+#             */
-/*   Updated: 2024/04/13 18:18:39 by bcarolle         ###   ########.fr       */
+/*   Updated: 2024/04/15 20:48:01 by bcarolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,3 @@ std::ostream	&operator<<(std::ostream &o, Fixed const &rhs)
 	o << rhs.toFloat();
 	return (o);
 }
-
-int	Fixed::_nbBits = 8;

@@ -6,7 +6,7 @@
 /*   By: bcarolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:52:40 by bcarolle          #+#    #+#             */
-/*   Updated: 2024/04/11 12:05:30 by bcarolle         ###   ########.fr       */
+/*   Updated: 2024/04/15 20:47:53 by bcarolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ class Fixed
 
 
 	private:
-		int			_integer;
-		static int	_nbBits;
+		int					_integer;
+		static const int	_nbBits = 8;
 };
 
 std::ostream	&operator<<(std::ostream &o, Fixed const &rhs);

@@ -24,11 +24,11 @@ _ICYAN=$'\033[46m
 _IWHITE=$'\033[47m
 
 SRC = \
-	src/main.cpp \
-	src/Fixed.cpp \
+	main.cpp \
+	Fixed.cpp \
 
 INCLUDES = \
-	-I./include/ \
+	-I Fixed.hpp \
 
 OBJ = $(SRC:%.cpp=$(BUILD_DIR)%.o)
 BUILD_DIR = ./build/

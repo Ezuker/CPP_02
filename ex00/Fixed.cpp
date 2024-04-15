@@ -6,7 +6,7 @@
 /*   By: bcarolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:52:38 by bcarolle          #+#    #+#             */
-/*   Updated: 2024/04/10 17:01:33 by bcarolle         ###   ########.fr       */
+/*   Updated: 2024/04/15 20:47:31 by bcarolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,3 @@ void	Fixed::setRawBits(int const raw)
 {
 	this->_integer = raw;
 }
-
-int	Fixed::_nbBits = 8;

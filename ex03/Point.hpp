@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcarolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/10 14:52:40 by bcarolle          #+#    #+#             */
-/*   Updated: 2024/03/10 15:16:43 by bcarolle         ###   ########.fr       */
+/*   Created: 2024/03/12 16:42:12 by bcarolle          #+#    #+#             */
+/*   Updated: 2024/04/15 20:46:15 by bcarolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-# define FIXED_H
+#ifndef POINT_HPP
+# define POINT_HPP
 
-# include <iostream>
+# include "Fixed.hpp"
 
-class Fixed
-{
+class	Point{
 	public:
-		Fixed();
-		Fixed(Fixed const &copy);
-		~Fixed();
+		Point();
+		Point(const float x, const float y);
+		Point(const Point &copy);
+		~Point();
 
-		Fixed &operator=(Fixed const &rhs);
+		Point	&operator=(const Point &rhs);
 
-		int		getRawBits() const;
-		void	setRawBits(int const raw);
-
+		Fixed	getX() const;
+		Fixed	getY() const;
 	private:
-		int			_integer;
-		static int	_nbBits;
+		const Fixed	_x;
+		const Fixed	_y;
 };
+
+bool	bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif

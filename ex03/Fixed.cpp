@@ -6,7 +6,7 @@
 /*   By: bcarolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:52:38 by bcarolle          #+#    #+#             */
-/*   Updated: 2024/04/11 12:05:01 by bcarolle         ###   ########.fr       */
+/*   Updated: 2024/04/15 20:48:16 by bcarolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,5 +188,3 @@ const Fixed	&Fixed::min(const Fixed &a, const Fixed &b)
 		return (a);
 	return (b);
 }
-
-int	Fixed::_nbBits = 8;
