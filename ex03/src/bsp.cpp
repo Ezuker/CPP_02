@@ -6,7 +6,7 @@
 /*   By: bcarolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 16:45:07 by bcarolle          #+#    #+#             */
-/*   Updated: 2024/04/11 12:05:55 by bcarolle         ###   ########.fr       */
+/*   Updated: 2024/04/15 16:37:08 by bcarolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static float	calcul_area(Point a, Point b, Point c)
 	return (result);
 }
 
-bool    bsp(Point const a, Point const b, Point const c, Point const point)
+bool	bsp(Point const a, Point const b, Point const c, Point const point)
 {
 	if (calcul_area(a, b, c) == calcul_area(a, b, point) + calcul_area(a, c, point) + calcul_area(b, c, point))
 		return (true);

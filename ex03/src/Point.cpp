@@ -6,22 +6,18 @@
 /*   By: bcarolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 16:46:09 by bcarolle          #+#    #+#             */
-/*   Updated: 2024/04/11 12:11:03 by bcarolle         ###   ########.fr       */
+/*   Updated: 2024/04/13 18:32:51 by bcarolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-Point::Point()
+Point::Point() : _x(Fixed(0)) , _y(Fixed(0))
 {
-	this->_x = Fixed();
-	this->_y = Fixed();
 }
 
-Point::Point(const float x, const float y)
+Point::Point(const float x, const float y) : _x(Fixed(x)), _y(Fixed(y))
 {
-	this->_x = Fixed(x);
-	this->_y = Fixed(y);
 }
 
 Point::Point(const Point &copy)
@@ -40,12 +36,12 @@ Point	&Point::operator=(const Point &rhs)
 	return (*this);
 }
 
-const Fixed	Point::getX()
+Fixed	Point::getX()
 {
 	return (this->_x);
 }
 
-const Fixed	Point::getY()
+Fixed	Point::getY()
 {
 	return (this->_y);
 }

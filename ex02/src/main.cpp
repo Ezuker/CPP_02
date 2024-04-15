@@ -6,7 +6,7 @@
 /*   By: bcarolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:52:35 by bcarolle          #+#    #+#             */
-/*   Updated: 2024/03/16 15:26:09 by bcarolle         ###   ########.fr       */
+/*   Updated: 2024/04/15 16:45:58 by bcarolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int main( void ) {
 
 	std::cout << b << std::endl;
 
-	std::cout << Fixed::max( a, b ) << std::endl;
-	std::cout << Fixed::min( a, b ) << std::endl; 
+	std::cout << "max is " << Fixed::max( a, b ) << std::endl;
+	std::cout << "min is " << Fixed::min( a, b ) << std::endl; 
 
 	Fixed	c(10.20f);
 	Fixed	d(11.20f);
@@ -51,6 +51,11 @@ int main( void ) {
 	std::cout << c / e << std::endl;
 	std::cout << c + e << std::endl;
 	std::cout << c - e << std::endl;
+
+	Fixed	f(3.2f);
+
+	std::cout << f.getRawBits() << std::endl;
+	std::cout << f.toFloat() << std::endl;
 
 	return 0;
 }
