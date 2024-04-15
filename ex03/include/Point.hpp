@@ -6,7 +6,7 @@
 /*   By: bcarolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 16:42:12 by bcarolle          #+#    #+#             */
-/*   Updated: 2024/04/13 18:33:01 by bcarolle         ###   ########.fr       */
+/*   Updated: 2024/04/15 18:18:26 by bcarolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ class	Point{
 	public:
 		Point();
 		Point(const float x, const float y);
-		Point(Point const &copy);
+		Point(const Point &copy);
 		~Point();
 
-		Point	&operator=(Point const &rhs);
+		Point	&operator=(Point &rhs);
 
-		Fixed	getX();
-		Fixed	getY();
+		Fixed	getX() const;
+		Fixed	getY() const;
 	private:
 		const Fixed	_x;
 		const Fixed	_y;

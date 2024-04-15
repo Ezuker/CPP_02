@@ -6,13 +6,13 @@
 /*   By: bcarolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 16:45:07 by bcarolle          #+#    #+#             */
-/*   Updated: 2024/04/15 16:37:08 by bcarolle         ###   ########.fr       */
+/*   Updated: 2024/04/15 18:13:26 by bcarolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-static float	calcul_area(Point a, Point b, Point c)
+float	calcul_area(Point const a, Point const b, Point const c)
 {
 	float x = a.getX().toFloat() * (b.getY().toFloat() - c.getY().toFloat());
 	float y = b.getX().toFloat() * (c.getY().toFloat() - a.getY().toFloat());

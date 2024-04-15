@@ -6,7 +6,7 @@
 /*   By: bcarolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:52:35 by bcarolle          #+#    #+#             */
-/*   Updated: 2024/04/15 16:45:58 by bcarolle         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:06:28 by bcarolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main( void ) {
 	Fixed	d(11.20f);
 	if (c > d)
 		std::cout << "C is superior to D" << std::endl;
-	if (d < c)
+	if (d > c)
 		std::cout << "D is superior to C" << std::endl;
 		
 	Fixed	e(10.20f);
@@ -43,6 +43,7 @@ int main( void ) {
 
 	if (c >= e)
 		std::cout << "C is superior or equal to E" << std::endl;
+	c++;
 	if (c <= e)
 		std::cout << "C is inferior or equal to E" << std::endl;
 
@@ -51,11 +52,6 @@ int main( void ) {
 	std::cout << c / e << std::endl;
 	std::cout << c + e << std::endl;
 	std::cout << c - e << std::endl;
-
-	Fixed	f(3.2f);
-
-	std::cout << f.getRawBits() << std::endl;
-	std::cout << f.toFloat() << std::endl;
 
 	return 0;
 }
