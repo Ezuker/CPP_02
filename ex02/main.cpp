@@ -6,7 +6,7 @@
 /*   By: bcarolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:52:35 by bcarolle          #+#    #+#             */
-/*   Updated: 2024/04/15 17:06:28 by bcarolle         ###   ########.fr       */
+/*   Updated: 2024/04/17 17:09:35 by bcarolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main( void ) {
 	std::cout << "max is " << Fixed::max( a, b ) << std::endl;
 	std::cout << "min is " << Fixed::min( a, b ) << std::endl; 
 
-	Fixed	c(10.20f);
+	Fixed	c(-10.20f);
 	Fixed	d(11.20f);
 	if (c > d)
 		std::cout << "C is superior to D" << std::endl;
