@@ -28,13 +28,13 @@ SRC = \
 	Fixed.cpp \
 
 INCLUDES = \
-	-I Fixed.hpp \
+	-I . \
 
 OBJ = $(SRC:%.cpp=$(BUILD_DIR)%.o)
 BUILD_DIR = ./build/
-CC = c++
-CFLAGS = -Wall -Wextra -Werror -g -std=c++98
-NAME = FixedClass
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -g -std=c++98
+NAME = Fixed
 BOOL_EXEC = 0
 EXEC = ./$(NAME)
 IS_COMPILING = 0
@@ -45,8 +45,8 @@ $(NAME): $(OBJ)
 	@echo
 	@echo "$(_BOLD)$(_CYAN)Compiling ($(_RED)$@$(_CYAN))$(_END)"
 	@echo
-	@echo " $(_BOLD)$(_RED)$(NAME) : $(_END)$(_GREY) $(CC) $(OBJ) $(_END)"
-	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+	@echo " $(_BOLD)$(_RED)$(NAME) : $(_END)$(_CYAN) $(CXX) $(OBJ) $(_END)"
+	@$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 	@echo
 	@ \
 	if [ $(BOOL_EXEC) -eq 1 ]; then \
@@ -54,9 +54,6 @@ $(NAME): $(OBJ)
 		@echo; \
 		$(EXEC); \
 	fi
-
-valgrind: $(NAME)
-	@valgrind --tool=helgrind $(EXEC) 5 800 200 200 7
 
 $(BUILD_DIR)%.o: %.cpp
 	@ \
@@ -67,8 +64,8 @@ $(BUILD_DIR)%.o: %.cpp
 		echo; \
 	fi
 	@$(eval IS_COMPILING = 1)
-	@echo "$(_BOLD)$(_RED) $< : $(_END) $(_GREY) $(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@ $(_END)"
-	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@echo "$(_BOLD)$(_RED) $< : $(_END) $(_CYAN) $(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@ $(_END)"
+	@$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	@echo "$(_BOLD)$(_CYAN)Cleaning...$(_END)"
